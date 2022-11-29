@@ -16,3 +16,6 @@ jobs:
 
       - name: pwd
         run: pwd
+
+      - name: xelatex
+        run: xelatex characters/dagmar.tex
