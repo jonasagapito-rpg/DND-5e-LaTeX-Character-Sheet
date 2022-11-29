@@ -5,16 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     container:
-      image: ghcr.io/matsavage/DND-5e-LaTeX-Action:latest
+      image: ghcr.io/matsavage/dnd-5e-latex-action:latest
     
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: DND-5e-LaTeX-Action
-        uses: matsavage/DND-5e-LaTeX-Action@v1.3.5
-        id: hello
-        with:
-          working_directory: characters
-          compiler: xelatex
-          runs: 2
-          args: "--file-line-error --interaction=nonstopmode"
