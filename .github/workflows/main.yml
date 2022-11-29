@@ -1,23 +1,15 @@
 on: [push]
 
 jobs:
-  compile_document:
+  build_latex:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: DND-5e-LaTeX-Action
-        uses: matsavage/DND-5e-LaTeX-Action@v1.3.1
-        id: hello
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile character tex files
+        uses: matsavage/latex-action@master
         with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
-      - uses: xu-cheng/latex-action@v2
-        with:
-          root_file: characters/*
-          glob_root_file: true
+          working_directory: characters
+          compiler: xelatex
+          runs: 2
+          args: "--file-line-error --interaction=nonstopmode"
