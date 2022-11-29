@@ -15,7 +15,7 @@ jobs:
         run: ls
 
       - name: ls tex root
-        run: ls /root/texmf/tex/latex/dnd/
+        run: ls /root/
 
       - name: pwd
         run: pwd
