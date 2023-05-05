@@ -21,4 +21,4 @@ jobs:
         run: pwd
 
       - name: xelatex
-        run: xelatex characters/dagmar.tex
+        run: xelatex characters/unnamed.tex
