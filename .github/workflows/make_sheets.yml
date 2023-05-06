@@ -16,7 +16,7 @@ jobs:
         uses: matsavage/dnd-latex-action@master
         with:
           working_directory: .
-          root_file: characters/unnamed.tex
+          root_file: characters/single_file_character.tex 
           compiler: xelatex
           runs: 2
           args: "--file-line-error --interaction=nonstopmode"
