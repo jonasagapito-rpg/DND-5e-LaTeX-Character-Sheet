@@ -4,16 +4,14 @@ on:
 
 jobs:
   build_latex:
-       name: "Build character sheets"
     runs-on: ubuntu-latest
-
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
 
-      - name: "HACK Add character aux dir"
-         run: mkdir unnamed
-
+      - name: "HACK: Add character aux dir"
+        runs: mkdir unnamed
+        
       - name: Compile character tex files
         uses: matsavage/dnd-latex-action@master
         with:
@@ -22,9 +20,3 @@ jobs:
           compiler: xelatex
           runs: 2
           args: "--file-line-error --interaction=nonstopmode"
-    
-      - name: Archive build artifacts      
-        uses: actions/upload-artifact@v3
-        with:
-          name: "Character Sheets"
-          path: "*.pdf"
