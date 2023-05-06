@@ -4,7 +4,9 @@ on:
 
 jobs:
   build_latex:
+       name: "Build character sheets"
     runs-on: ubuntu-latest
+
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
