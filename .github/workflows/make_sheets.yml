@@ -9,7 +9,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
 
-      - name: "HACK: Add character aux dir"
+      - name: "HACK - add character aux dir"
          run: mkdir unnamed
 
       - name: Compile character tex files
