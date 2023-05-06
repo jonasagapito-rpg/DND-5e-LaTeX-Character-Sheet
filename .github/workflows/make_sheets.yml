@@ -20,3 +20,9 @@ jobs:
           compiler: xelatex
           runs: 2
           args: "--file-line-error --interaction=nonstopmode"
+
+      - name: Archive build artifacts      
+        uses: actions/upload-artifact@v3
+        with:
+          name: "Character Sheets"
+          path: "*.pdf"
