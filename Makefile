@@ -9,4 +9,4 @@ clean:
 	CHARACTERNAME=$(basename $< |  sed 's:.*/::')
 	rm -rdf CHARACTERNAME
 	mkdir CHARACTERNAME
-	xelatex $<
+	latexmk -file-line-error -xelatex <$
